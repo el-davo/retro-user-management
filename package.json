@@ -8,7 +8,10 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "docker": "docker build -t eahedav/retro-user-management .",
+    "docker:tag": "docker tag eahedav/retro-user-management eahedav/retro-user-management",
+    "docker:push": "docker push eahedav/retro-user-management"
   },
   "dependencies": {
     "compression": "^1.0.3",
