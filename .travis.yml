@@ -12,5 +12,3 @@ cache:
 deploy:
   provider: script
   script: yarn docker && yarn docker:tag && yarn docker:push
-  on:
-    branch: prod
