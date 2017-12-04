@@ -1,0 +1,14 @@
+language: node_js
+sudo: required
+node_js:
+- '8'
+services:
+  - docker
+install:
+- yarn
+- yarn lint
+cache:
+  yarn: true
+deploy:
+  provider: script
+  script: yarn docker && yarn docker:tag && yarn docker:push
