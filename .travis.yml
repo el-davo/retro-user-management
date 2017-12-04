@@ -9,3 +9,10 @@ install:
 - yarn lint
 cache:
   yarn: true
+before_install:
+  - cd /root/sinatra; bundle exec foreman start;
+deploy:
+  provider: script
+  script: yarn docker && yarn docker:tag && yarn docker:push
+  on:
+    branch: prod
