@@ -1,15 +1,11 @@
-FROM node:boron
+FROM node
 
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-COPY . .
+COPY package.json .
+COPY yarn.lock .
 
 RUN npm install -g yarn && yarn
 
-# Bundle app source
 COPY . .
 
-EXPOSE 8080
-CMD [ "npm", "start" ]
+EXPOSE 3000
+CMD ["yarn", "start"]
